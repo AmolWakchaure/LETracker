@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:orientation="vertical">
+
+        <TextView
+                android:id="@+id/new_labor_tv"
+                android:layout_width="fill_parent"
+                android:layout_height="26pt"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorWhite"
+                android:gravity="center"
+                android:fontFamily="@font/samsungsansbold"
+                android:text="Add new labor"
+                android:background="@color/colorPrimaryDark"/>
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/labor_list"
+                android:layout_width="fill_parent"
+
+                android:layout_height="fill_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/hide_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="vertical">
+        <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_labor"
+        />
+
+        <TextView
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:gravity="center"
+                android:fontFamily="@font/samsungsansbold"
+                android:layout_marginTop="5pt"
+                android:text="Labor data not found"/>
+    </LinearLayout>
+
+
+</RelativeLayout>
