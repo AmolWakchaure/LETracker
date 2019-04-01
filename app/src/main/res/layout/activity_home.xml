@@ -7,7 +7,7 @@
               android:background="@drawable/ic_back_home"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context=".activity.HomeActivity">
+              tools:context=".user.activity.HomeActivity">
 
     <LinearLayout
             android:layout_width="fill_parent"
@@ -35,71 +35,65 @@
                 android:layout_height="fill_parent"
                 android:orientation="horizontal"
                 android:layout_weight="1">
-            <LinearLayout
+
+            <android.support.v7.widget.CardView
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_weight="1">
-                <android.support.v7.widget.CardView
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_weight="1"
+                    card_view:cardElevation="5dp">
+                <LinearLayout
+                        android:id="@+id/readPrescLi"
                         android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_margin="10dp"
-                        app:cardCornerRadius="10dp"
-                        card_view:cardElevation="5dp">
-                    <LinearLayout
-                            android:id="@+id/readPrescLi"
-                            android:layout_width="fill_parent"
-                            android:gravity="center"
-                            android:clickable="true"
-                            android:background="@drawable/ripple_effect"
-                            android:orientation="vertical"
-                            android:layout_height="fill_parent">
-                        <ImageView
-                                android:layout_width="35pt"
-                                android:layout_height="35pt"
-                                android:src="@drawable/ic_user_profile"/>
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2pt"
-                                android:text="Create Labor"/>
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:background="@drawable/ripple_effect"
+                        android:orientation="vertical"
+                        android:layout_height="fill_parent">
+                    <ImageView
+                            android:layout_width="35pt"
+                            android:layout_height="35pt"
+                            android:src="@drawable/ic_user_profile"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2pt"
+                            android:text="Create Labor"/>
 
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
 
-            </LinearLayout>
-            <LinearLayout
+
+            <android.support.v7.widget.CardView
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_weight="1">
-                <android.support.v7.widget.CardView
+                    app:cardCornerRadius="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    card_view:cardElevation="5dp">
+
+                <LinearLayout
+                        android:id="@+id/readConLi"
                         android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        app:cardCornerRadius="10dp"
-                        android:layout_margin="10dp"
-                        card_view:cardElevation="5dp">
+                        android:gravity="center"
+                        android:clickable="true"
+                        android:background="@drawable/ripple_effect"
+                        android:orientation="vertical"
+                        android:layout_height="fill_parent">
+                    <ImageView
+                            android:layout_width="35pt"
+                            android:layout_height="35pt"
+                            android:src="@drawable/ic_user_profile"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2pt"
+                            android:text="All Labor"/>
 
-                    <LinearLayout
-                            android:id="@+id/readConLi"
-                            android:layout_width="fill_parent"
-                            android:gravity="center"
-                            android:clickable="true"
-                            android:background="@drawable/ripple_effect"
-                            android:orientation="vertical"
-                            android:layout_height="fill_parent">
-                        <ImageView
-                                android:layout_width="35pt"
-                                android:layout_height="35pt"
-                                android:src="@drawable/ic_user_profile"/>
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2pt"
-                                android:text="All Labor"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
 
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
-
-            </LinearLayout>
 
         </LinearLayout>
         <LinearLayout
@@ -107,84 +101,69 @@
                 android:layout_height="fill_parent"
                 android:orientation="horizontal"
                 android:layout_weight="1">
-            <LinearLayout
+
+            <android.support.v7.widget.CardView
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_weight="1">
-                <android.support.v7.widget.CardView
+                    app:cardCornerRadius="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    card_view:cardElevation="5dp">
+                <LinearLayout
+                        android:id="@+id/profileLi"
+                        android:clickable="true"
+                        android:background="@drawable/ripple_effect"
                         android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        app:cardCornerRadius="10dp"
-                        android:layout_margin="10dp"
-                        card_view:cardElevation="5dp">
-                    <LinearLayout
-                            android:id="@+id/profileLi"
-                            android:clickable="true"
-                            android:background="@drawable/ripple_effect"
-                            android:layout_width="fill_parent"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:layout_height="fill_parent">
-                        <ImageView
-                                android:layout_width="35pt"
-                                android:layout_height="35pt"
-                                android:src="@drawable/ic_user_profile"/>
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2pt"
-                                android:text="Work History"/>
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_height="fill_parent">
+                    <ImageView
+                            android:layout_width="35pt"
+                            android:layout_height="35pt"
+                            android:src="@drawable/ic_work_history"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2pt"
+                            android:text="Work History"/>
 
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
 
-            </LinearLayout>
-            <LinearLayout
+
+            <android.support.v7.widget.CardView
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_weight="1">
-                <android.support.v7.widget.CardView
+                    app:cardCornerRadius="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    card_view:cardElevation="5dp">
+                <LinearLayout
+                        android:id="@+id/logoutLi"
+                        android:clickable="true"
+                        android:background="@drawable/ripple_effect"
                         android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        app:cardCornerRadius="10dp"
-                        android:layout_margin="10dp"
-                        card_view:cardElevation="5dp">
-                    <LinearLayout
-                            android:id="@+id/logoutLi"
-                            android:clickable="true"
-                            android:background="@drawable/ripple_effect"
-                            android:layout_width="fill_parent"
-                            android:gravity="center"
-                            android:orientation="vertical"
-                            android:layout_height="fill_parent">
-                        <ImageView
-                                android:layout_width="35pt"
-                                android:layout_height="35pt"
-                                android:src="@drawable/ic_user_profile"/>
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2pt"
-                                android:text="Payment History"/>
-
-                    </LinearLayout>
-                </android.support.v7.widget.CardView>
-
-            </LinearLayout>
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_height="fill_parent">
+                    <ImageView
+                            android:layout_width="35pt"
+                            android:layout_height="35pt"
+                            android:src="@drawable/ic_payment_history"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2pt"
+                            android:text="Payment History"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
 
         </LinearLayout>
-
         <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:orientation="horizontal"
                 android:layout_weight="1.5">
-
-
         </LinearLayout>
     </LinearLayout>
-
-
-
-
 </LinearLayout>

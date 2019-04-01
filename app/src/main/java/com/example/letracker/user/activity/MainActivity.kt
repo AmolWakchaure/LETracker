@@ -1,4 +1,4 @@
-package com.example.letracker.activity
+package com.example.letracker.user.activity
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -7,10 +7,9 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.widget.LinearLayout
 import com.example.letracker.R
-import com.example.letracker.adapters.LaborAdapter
+import com.example.letracker.user.adapters.LaborAdapter
 import com.example.letracker.database.TABLE_LABOR
 import com.example.letracker.other.MyApplication
-import com.example.letracker.pojo.LaborInfo
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

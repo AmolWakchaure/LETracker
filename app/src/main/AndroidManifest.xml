@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.letracker">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
             android:name=".other.MyApplication"
             android:allowBackup="true"
@@ -10,11 +12,21 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".activity.HomeActivity">
+        <activity android:name=".admin.activity.AssignUserActivity">
         </activity>
-        <activity android:name=".activity.AddNewLaborActivity">
+        <activity android:name=".admin.activity.DeviceFirmwareActivity">
         </activity>
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".authentication.LoginActivity">
+        </activity>
+        <activity android:name=".admin.activity.UserListActivity">
+        </activity>
+        <activity android:name=".user.activity.HomeActivity">
+        </activity>
+        <activity android:name=".user.activity.MainActivity">
+        </activity>
+        <activity android:name=".user.activity.AddNewLaborActivity">
+        </activity>
+        <activity android:name=".other.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

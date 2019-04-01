@@ -1,13 +1,12 @@
-package com.example.letracker.adapters
+package com.example.letracker.user.adapters
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.letracker.R
-import com.example.letracker.pojo.LaborInfo
+import com.example.letracker.user.pojo.LaborInfo
 
 class LaborAdapter (val userList: ArrayList<LaborInfo>) : RecyclerView.Adapter<LaborAdapter.ViewHolder>()
 {

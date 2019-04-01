@@ -3,7 +3,7 @@ package com.example.letracker.database
 import android.content.ContentValues
 import android.database.Cursor
 import com.example.letracker.other.MyApplication
-import com.example.letracker.pojo.LaborInfo
+import com.example.letracker.user.pojo.LaborInfo
 
 class TABLE_LABOR {
 

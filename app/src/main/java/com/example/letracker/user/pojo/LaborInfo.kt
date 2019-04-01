@@ -1,4 +1,4 @@
-package com.example.letracker.pojo
+package com.example.letracker.user.pojo
 
 class LaborInfo (
 

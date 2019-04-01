@@ -8,4 +8,6 @@
     <color name="colorText">#3c4f5e</color>
     <color name="colorHr">#eceff1</color>
     <color name="colorRipple">#e6f0ff</color>
+    <color name="colorBlackFent">#cccccc</color>
+    <color name="colorBlackDark">#333333</color>
 </resources>
