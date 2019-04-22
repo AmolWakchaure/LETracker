@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        android:layout_height="fill_parent">
+    <LinearLayout android:layout_width="fill_parent"
+                  android:orientation="horizontal"
+                  android:background="@color/colorPrimaryDark"
+                  android:layout_height="25pt">
+
+        <ImageView
+                android:id="@+id/go_back"
+                android:layout_width="fill_parent"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:padding="12dp"
+                android:background="@drawable/ripple_effect"
+                android:src="@drawable/ic_back_arrow"
+                android:layout_height="fill_parent">
+
+
+        </ImageView>
+        <TextView android:layout_width="fill_parent"
+                  android:text="Labor Payment"
+                  android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                  android:gravity="center_vertical"
+                  android:paddingLeft="15pt"
+                  android:textColor="@color/colorWhite"
+                  android:fontFamily="@font/samsungsansregular"
+                  android:layout_weight="1"
+                  android:layout_height="fill_parent"
+                  android:id="@+id/title_tv"/>
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:orientation="vertical"
+                  android:id="@+id/parrent_layout">
+
+        <android.support.v7.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_margin="15dp"
+                card_view:cardElevation="20dp">
+            <LinearLayout android:layout_width="fill_parent"
+                          android:layout_height="fill_parent"
+                          android:layout_margin="15dp"
+                          android:orientation="vertical">
+
+                <android.support.design.widget.TextInputLayout
+
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+
+
+                        android:theme="@style/TextLabel">
+
+                    <EditText
+                            android:id="@+id/name_edt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Labor Name*"
+                            android:maxLength="25"
+                            android:enabled="false"
+                            android:editable="false"
+                            android:fontFamily="@font/samsungsansregular"
+                            android:imeOptions="actionNext"
+                            android:inputType="textCapWords"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5pt"
+                        android:theme="@style/TextLabel">
+
+                    <EditText
+                            android:id="@+id/amt_to_paid_edt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Amount to paid*"
+                            android:fontFamily="@font/samsungsansregular"
+                            android:imeOptions="actionDone"
+                            android:inputType="phone"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <Button android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5pt"
+                        android:text="Do Payment"
+                        android:textColor="@color/colorWhite"
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/samsungsansregular"
+                        android:background="@drawable/round_btn"
+                        android:id="@+id/submit_btn"/>
+
+                <Button android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5pt"
+                        android:text="Payment Report"
+                        android:textColor="@color/colorWhite"
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/samsungsansregular"
+                        android:background="@drawable/round_btn"
+                        android:id="@+id/payment_report_btn"/>
+
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</LinearLayout>

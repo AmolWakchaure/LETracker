@@ -122,11 +122,10 @@
 
                 <Button android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:background="@color/colorGreen"
+                        android:background="@drawable/ripple_green"
                         android:textAllCaps="false"
-
                         android:layout_weight="1"
-
+                        android:layout_marginRight="1pt"
                         android:fontFamily="@font/samsungsansregular"
                         android:textColor="@color/colorWhite"
                         android:id="@+id/assign_credentials_tv"
@@ -134,9 +133,10 @@
 
                 <Button android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:background="@color/colorPrimaryDark"
+                        android:background="@drawable/ripple_gray"
                         android:textAllCaps="false"
 
+                        android:layout_marginLeft="1pt"
                         android:layout_weight="1"
 
                         android:fontFamily="@font/samsungsansregular"

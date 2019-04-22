@@ -1,14 +1,17 @@
 package com.example.letracker.admin.activity
 
 import android.app.ProgressDialog
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.widget.LinearLayout
 import com.example.letracker.R
 import com.example.letracker.admin.adapter.UserListAdapter
 import com.example.letracker.admin.pojo.UserModel
+import com.example.letracker.authentication.LoginActivity
 import com.example.letracker.other.Constants
 import com.example.letracker.other.M
 import com.example.letracker.other.MyApplication
@@ -32,6 +35,8 @@ class UserListActivity : AppCompatActivity() {
         db = FirebaseFirestore.getInstance()
         //Tm.refreshData(db)
         pd = ProgressDialog(this)
+
+        setClickListner()
         //fetch user list from firestore
         if(M.isNetworkAvailable())
         {
@@ -42,6 +47,30 @@ class UserListActivity : AppCompatActivity() {
             M.t(Constants.CONNECTION)
         }
     }
+
+    private fun setClickListner() {
+
+
+        go_back.setOnClickListener {
+
+            finish()
+        }
+        logout_app.setOnClickListener {
+
+            var snackbar = Snackbar.make(main_layout,"Do you want to logout?",Snackbar.LENGTH_LONG)
+                .setAction("Logout",{
+
+                    MyApplication.editor.clear().commit()
+                    var i = Intent(this,LoginActivity::class.java)
+                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    startActivity(i)
+                    finish()
+
+                });
+            snackbar.show()
+        }
+    }
+
     private fun getUserList() {
 
         pd.setTitle("Getting User list, please wait...")

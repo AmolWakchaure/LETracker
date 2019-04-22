@@ -4,6 +4,12 @@ interface Constants {
 
     companion object {
 
+        var FLAG = "flag"
+        var FLAG_ADD = "flag_add"
+        var FLAG_UPDATE = "flag_update"
+        var ATTENDANCE_STRING = "att_string"
+        var PAYMENT_ADVANCE = "advance"
+        var PAYMENT_PAYMENT = "payment"
 
 
         //shared preferences parameter

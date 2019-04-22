@@ -33,13 +33,13 @@ class DeviceFirmwareActivity : AppCompatActivity() {
             var incremental_data = device_data.get(7).split(":")
 
 
-            firmware_tv.setText(Html.fromHtml("<b>Brand : </b>"+brand_data.get(1)+"<br>"
-            +"<b>Device : </b>"+devicee_data.get(1)+"<br>"
-            +"<b>Model : </b>"+model_data.get(1)+"<br>"
-            +"<b>Id : </b>"+id_data.get(1)+"<br>"
-            +"<b>Product : </b>"+product_data.get(1)+"<br>"
-            +"<b>SDK : </b>"+sdk_data.get(1)+"<br>"
-            +"<b>Release : </b>"+release_data.get(1)+"<br>"
+            firmware_tv.setText(Html.fromHtml("<b>Brand : </b>"+brand_data.get(1)+"<br><br>"
+            +"<b>Device : </b>"+devicee_data.get(1)+"<br><br>"
+            +"<b>Model : </b>"+model_data.get(1)+"<br><br>"
+            +"<b>Id : </b>"+id_data.get(1)+"<br><br>"
+            +"<b>Product : </b>"+product_data.get(1)+"<br><br>"
+            +"<b>SDK : </b>"+sdk_data.get(1)+"<br><br>"
+            +"<b>Release : </b>"+release_data.get(1)+"<br><br>"
             +"<b>Incremental : </b>"+incremental_data.get(1)))
         }
         else

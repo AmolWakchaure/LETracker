@@ -2,6 +2,7 @@
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/main_layout"
         android:layout_width="match_parent"
@@ -11,11 +12,11 @@
         android:layout_marginRight="10pt"
         tools:context=".authentication.LoginActivity">
     <android.support.v7.widget.CardView
-            android:id="@+id/cardView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            card_view:cardElevation="6dp">
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        card_view:cardElevation="6dp">
         <LinearLayout android:layout_width="fill_parent"
                       android:layout_height="wrap_content"
                       android:layout_margin="10pt"
@@ -52,19 +53,19 @@
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-
                     android:layout_marginTop="5pt"
                     android:theme="@style/TextLabel">
 
-                <EditText android:layout_width="fill_parent"
+                <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText android:layout_width="fill_parent"
                           android:layout_height="wrap_content"
                           android:hint="Password*"
                           android:inputType="textPassword"
                           android:imeOptions="actionDone"
                           android:fontFamily="@font/samsungsansregular"
+                          app:drawable_hide="@drawable/ic_visibility_black_24dp"
+                          app:drawable_show="@drawable/ic_visibility_off_black_24dp"
                           android:id="@+id/password_tv"/>
             </android.support.design.widget.TextInputLayout>
             <Button android:layout_width="fill_parent"

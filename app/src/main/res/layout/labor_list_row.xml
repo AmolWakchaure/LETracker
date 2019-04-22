@@ -29,32 +29,92 @@
                     android:layout_marginLeft="5pt"
                     android:fontFamily="@font/samsungsansregular"
                     android:text="Labor Mobile"/>
+            <TextView
+                    android:id="@+id/address_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2pt"
+                    android:layout_marginLeft="5pt"
+                    android:layout_marginRight="3pt"
+                    android:fontFamily="@font/samsungsansregular"
+                    android:text="Labor Address"/>
+            <TextView
+                    android:id="@+id/charges_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2pt"
+                    android:layout_marginLeft="5pt"
+                    android:fontFamily="@font/samsungsansregular"
+
+                    android:text="Labor Charges"/>
             <LinearLayout android:layout_width="fill_parent"
                           android:layout_height="wrap_content"
+                          android:layout_marginTop="3pt"
+                          android:layout_gravity="end"
                           android:orientation="horizontal"
-                          android:layout_marginTop="2pt">
+                          android:layout_weight="1">
                 <Button android:layout_width="fill_parent"
-                        android:layout_weight="1"
                         android:layout_height="15pt"
-                        android:text="Payment History"
-                        android:textAllCaps="false"
-                        android:textColor="@color/colorWhite"
-                        android:background="@drawable/round_btn"
-                        android:fontFamily="@font/samsungsansregular"
-                        android:layout_margin="3pt"
-                        android:id="@+id/payment_history_btn"/>
-                <Button android:layout_width="fill_parent"
-                        android:layout_weight="1"
-                        android:layout_height="15pt"
-                        android:text="Work History"
+                        android:text="Attendance"
                         android:fontFamily="@font/samsungsansregular"
                         android:textAllCaps="false"
                         android:textColor="@color/colorWhite"
-                        android:background="@drawable/round_btn"
-                        android:layout_margin="3pt"
-                        android:id="@+id/work_history_btn"/>
+                        android:layout_margin="0.1pt"
+                        android:layout_weight="1"
+                        android:background="@color/colorRed"
+                        android:id="@+id/attendance_btn"/>
+                <Button android:layout_width="fill_parent"
+                        android:layout_height="15pt"
+                        android:text="Call"
+                        android:fontFamily="@font/samsungsansregular"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite"
+                        android:layout_weight="1"
+                        android:layout_margin="0.1pt"
+                        android:background="@color/colorGreen"
+                        android:id="@+id/call_labor_btn"/>
+                <Button android:layout_width="fill_parent"
+
+                        android:layout_height="15pt"
+                        android:text="Edit"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/samsungsansregular"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite"
+                        android:layout_margin="0.1pt"
+                        android:background="@color/colorPrimaryDark"
+
+                        android:id="@+id/edite_labor_btn"/>
 
             </LinearLayout>
+            <LinearLayout android:layout_width="fill_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginTop="0.1pt"
+                          android:layout_gravity="end"
+                          android:orientation="horizontal"
+                          android:layout_weight="1">
+                <Button android:layout_width="fill_parent"
+                        android:layout_height="15pt"
+                        android:text="Advance Pay"
+                        android:fontFamily="@font/samsungsansregular"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite"
+                        android:layout_margin="0.1pt"
+                        android:layout_weight="1"
+                        android:background="@color/design_default_color_primary"
+                        android:id="@+id/avance_btn"/>
+                <Button android:layout_width="fill_parent"
+                        android:layout_height="15pt"
+                        android:text="Payment Pay"
+                        android:fontFamily="@font/samsungsansregular"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorWhite"
+                        android:layout_weight="1"
+                        android:layout_margin="0.1pt"
+                        android:background="@color/colorBriks"
+                        android:id="@+id/payment_btn"/>
+            </LinearLayout>
+
             <View android:layout_width="fill_parent"
                   android:layout_height="3pt"/>
 

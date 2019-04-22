@@ -15,6 +15,9 @@ class DBHelper (context : Context) : SQLiteOpenHelper(context, Constants.DATABAS
         try
         {
             db!!.execSQL(TABLE_LABOR.CREATE_TABLE)
+            db!!.execSQL(TABLE_SITE.CREATE_TABLE)
+            db!!.execSQL(TABLE_ATTENDANCE.CREATE_TABLE)
+            db!!.execSQL(TABLE_LABOR_PAYMENT.CREATE_TABLE)
         }
         catch (e : Exception)
         {
@@ -23,6 +26,8 @@ class DBHelper (context : Context) : SQLiteOpenHelper(context, Constants.DATABAS
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+
+
 
     }
 

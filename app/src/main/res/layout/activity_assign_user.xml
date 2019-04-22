@@ -10,15 +10,35 @@
         android:orientation="vertical"
         tools:context=".admin.activity.AssignUserActivity">
 
-    <TextView android:layout_width="fill_parent"
-              android:background="@color/colorPrimaryDark"
-              android:text="Assign User"
-              android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-              android:gravity="center"
-              android:textColor="@color/colorWhite"
-              android:fontFamily="@font/samsungsansregular"
-              android:layout_height="25pt"
-              android:id="@+id/go_back"/>
+    <LinearLayout android:layout_width="fill_parent"
+                  android:orientation="horizontal"
+                  android:background="@color/colorPrimaryDark"
+                  android:layout_height="25pt">
+
+        <ImageView
+                android:id="@+id/go_back"
+                android:layout_width="fill_parent"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:padding="12dp"
+                android:background="@drawable/ripple_effect"
+                android:src="@drawable/ic_back_arrow"
+                android:layout_height="fill_parent">
+
+
+        </ImageView>
+        <TextView android:layout_width="fill_parent"
+
+                  android:text="Assign User"
+                  android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                  android:gravity="center_vertical"
+                  android:paddingLeft="15pt"
+                  android:textColor="@color/colorWhite"
+                  android:fontFamily="@font/samsungsansregular"
+                  android:layout_weight="1"
+                  android:layout_height="fill_parent"/>
+
+    </LinearLayout>
     <LinearLayout android:layout_width="fill_parent"
 
                   android:orientation="vertical"
@@ -65,10 +85,8 @@
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
-
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-
                         android:layout_marginTop="5pt"
                         android:theme="@style/TextLabel">
 
@@ -90,13 +108,15 @@
                         android:layout_marginTop="5pt"
                         android:theme="@style/TextLabel">
 
-                    <EditText android:layout_width="fill_parent"
-                              android:layout_height="wrap_content"
-                              android:hint="Password*"
-                              android:inputType="textPassword"
-                              android:imeOptions="actionNext"
-                              android:fontFamily="@font/samsungsansregular"
-                              android:id="@+id/password_tv"/>
+                    <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText android:layout_width="fill_parent"
+                                                                                    android:layout_height="wrap_content"
+                                                                                    android:hint="Password*"
+                                                                                    android:inputType="textPassword"
+                                                                                    android:imeOptions="actionNext"
+                                                                                    android:fontFamily="@font/samsungsansregular"
+                                                                                    app:drawable_hide="@drawable/ic_visibility_black_24dp"
+                                                                                    app:drawable_show="@drawable/ic_visibility_off_black_24dp"
+                                                                                    android:id="@+id/password_tv"/>
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
 
@@ -106,13 +126,15 @@
                         android:layout_marginTop="5pt"
                         android:theme="@style/TextLabel">
 
-                    <EditText android:layout_width="fill_parent"
-                              android:layout_height="wrap_content"
-                              android:hint="Confirm Password*"
-                              android:inputType="textPassword"
-                              android:imeOptions="actionDone"
-                              android:fontFamily="@font/samsungsansregular"
-                              android:id="@+id/confirm_password_tv"/>
+                    <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText android:layout_width="fill_parent"
+                                                                                    android:layout_height="wrap_content"
+                                                                                    android:hint="Confirm Password*"
+                                                                                    android:inputType="textPassword"
+                                                                                    android:imeOptions="actionDone"
+                                                                                    android:fontFamily="@font/samsungsansregular"
+                                                                                    app:drawable_hide="@drawable/ic_visibility_black_24dp"
+                                                                                    app:drawable_show="@drawable/ic_visibility_off_black_24dp"
+                                                                                    android:id="@+id/confirm_password_tv"/>
                 </android.support.design.widget.TextInputLayout>
                 <Button android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -123,7 +145,6 @@
                         android:text="Submit to Assign"
                         android:fontFamily="@font/samsungsansregular"
                         android:id="@+id/submit_btn"/>
-
 
 
             </LinearLayout>

@@ -6,19 +6,46 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".admin.activity.UserListActivity">
-    <TextView android:layout_width="fill_parent"
-              android:layout_height="25pt"
-              android:gravity="center"
-              android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-              android:fontFamily="@font/samsungsansregular"
-              android:textColor="@color/colorWhite"
-              android:background="@color/colorPrimaryDark"
-              android:text="Users"/>
+        tools:context=".admin.activity.UserListActivity"
+android:id="@+id/main_layout">
+    <LinearLayout android:layout_width="fill_parent"
+                  android:orientation="horizontal"
+                  android:background="@color/colorPrimaryDark"
+                  android:weightSum="6"
+                  android:layout_height="25pt">
+
+
+        <ImageView android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:padding="12dp"
+                   android:src="@drawable/ic_back_arrow"
+                   android:id="@+id/go_back"
+                   android:background="@drawable/ripple_effect"
+                   android:layout_weight="1"/>
+        <TextView android:layout_width="0dp"
+                  android:text="User List"
+                  android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                  android:gravity="center"
+                  android:textColor="@color/colorWhite"
+                  android:fontFamily="@font/samsungsansregular"
+                  android:layout_weight="4"
+                  android:layout_height="match_parent"/>
+        <ImageView
+                android:id="@+id/logout_app"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:src="@drawable/ic_power_settings_new_black_24dp"
+                android:background="@drawable/ripple_effect"
+                android:layout_height="match_parent">
+
+
+        </ImageView>
+    </LinearLayout>
     <android.support.v7.widget.RecyclerView android:layout_width="fill_parent"
                                             android:layout_height="fill_parent"
                                             android:id="@+id/user_list_rl">
-
     </android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

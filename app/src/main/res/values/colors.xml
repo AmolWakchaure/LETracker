@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#8c8c8c</color>
+    <color name="colorPrimary">#666666</color>
     <color name="colorPrimaryDark">#666666</color>
     <color name="colorAccent">#666666</color>
     <color name="colorGreen">#009933</color>
@@ -10,4 +10,6 @@
     <color name="colorRipple">#e6f0ff</color>
     <color name="colorBlackFent">#cccccc</color>
     <color name="colorBlackDark">#333333</color>
+    <color name="colorRed">#ff0000</color>
+    <color name="colorBriks">#994d00</color>
 </resources>

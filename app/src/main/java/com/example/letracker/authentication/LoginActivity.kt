@@ -27,6 +27,7 @@ class LoginActivity : AppCompatActivity() {
 
     //firestore instance
     lateinit var db: FirebaseFirestore
+    lateinit var deviceID: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
 
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
         //get device id first
-        var deviceID = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID + "");
+        deviceID = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID + "");
         mac_id_tv.setText(""+deviceID)
 
 
@@ -152,15 +153,64 @@ class LoginActivity : AppCompatActivity() {
         }
         else
         {
-            //follow admin login
-            MyApplication.editor.putString(Constants.USER_NAME,username).commit()
-            MyApplication.editor.putString(Constants.PASSWORD,password).commit()
-            //follow user login
-            //follow admin login
-            startActivity(Intent(this,HomeActivity::class.java))
-            finish()
+            //send mac id to firebase
+            if(M.isNetworkAvailable())
+            {
+
+                //follow login
+                loginUser(deviceID,username,password)
+
+            }
+            else
+            {
+                M.t(Constants.CONNECTION)
+            }
         }
 
+
+    }
+    private fun loginUser(mac_id : String, username : String, password : String)
+    {
+        try
+        {
+            val mQuery = db.collection(Constants.DEVICE_MASTER)
+                .whereEqualTo(Constants.USER_NAME, username)
+                .whereEqualTo(Constants.PASSWORD, password)
+                .whereEqualTo(Constants.DEVICE_MAC_ID, mac_id)
+
+            mQuery.addSnapshotListener { queryDocumentSnapshots, e ->
+
+                if(queryDocumentSnapshots!!.isEmpty)
+                {
+                    //if user not found for this mac_id
+                    M.t("Oops ! account not found for this details")
+                }
+                else
+                {
+                    for (ds in queryDocumentSnapshots!!)
+                    {
+                        if (ds.exists())
+                        {
+                            //if found for this mac_id
+                            //follow admin login
+                            MyApplication.editor.putString(Constants.USER_NAME,username).commit()
+                            MyApplication.editor.putString(Constants.PASSWORD,password).commit()
+                            //follow user login
+                            startActivity(Intent(this,HomeActivity::class.java))
+                            finish()
+                            M.t("Successfully login")
+                            break
+
+                        }
+                    }
+                }
+
+            }
+        }
+        catch (e : Exception)
+        {
+            e.printStackTrace()
+        }
 
     }
 }
