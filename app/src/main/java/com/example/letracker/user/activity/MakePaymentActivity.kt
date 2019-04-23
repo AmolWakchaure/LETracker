@@ -3,6 +3,7 @@ package com.example.letracker.user.activity
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.RadioGroup
 import com.example.letracker.R
 import com.example.letracker.database.TABLE_ATTENDANCE
 import com.example.letracker.database.TABLE_LABOR
@@ -11,11 +12,11 @@ import com.example.letracker.other.Constants
 import com.example.letracker.other.M
 import kotlinx.android.synthetic.main.activity_adavance_payment.*
 
-class AdavancePaymentActivity : AppCompatActivity() {
+class MakePaymentActivity : AppCompatActivity() {
 
 
-    var LABOR_ID = ""
-    var NAME = ""
+    var LABOR_ID = "2"
+    var NAME = "fghfdgffg"
     var flag = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,32 +32,32 @@ class AdavancePaymentActivity : AppCompatActivity() {
 
         //set mac address
         var bundle = intent.extras
-        flag = bundle.getString(Constants.FLAG)
         LABOR_ID = bundle.getString(TABLE_LABOR.ID)
         NAME = bundle.getString(TABLE_LABOR.NAME)
         name_edt.setText(NAME)
 
-        if(flag.equals("advance"))
-        {
-            title_tv.setText("Make Adavance Payment")
-        }
-        else if(flag.equals("payment"))
-        {
-            title_tv.setText("Make Labor Payment")
-        }
-        else
-        {
-            title_tv.setText("Ooops ! error occured")
-        }
     }
 
     private fun setListner() {
 
 
-       /* var fm = supportFragmentManager
-        var advancePaymentFragment = AdvancePaymentReportActivity()
-        fm.beginTransaction().replace(R.id.main_contenier,advancePaymentFragment).commit()
-*/
+        flag = Constants.PAYMENT_ADVANCE
+        radioGroup.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener { group, checkedId ->
+
+            if(checkedId == R.id.advance_rb)
+            {
+               flag = Constants.PAYMENT_ADVANCE
+            }
+            else if(checkedId == R.id.paid_rb)
+            {
+                flag = Constants.PAYMENT_PAYMENT
+            }
+            else if(checkedId == R.id.received_adv_rb)
+            {
+                flag = Constants.RETURN_ADVANCE
+            }
+        })
+
         payment_report_btn.setOnClickListener {
 
             var i = Intent(this,AdvancePaymentReportActivity::class.java)

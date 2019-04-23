@@ -37,10 +37,7 @@ class LaborListActivity : AppCompatActivity() {
     }
     private fun setClickListner() {
 
-        go_back.setOnClickListener {
 
-            finish()
-        }
         new_labor_btn.setOnClickListener {
 
 
@@ -55,11 +52,14 @@ class LaborListActivity : AppCompatActivity() {
         var LABOR_INFO = TABLE_LABOR.getLabor()
         if(LABOR_INFO.isEmpty())
         {
-            M.t("Labor not found")
+            hide_layout.setVisibility(View.VISIBLE)
+            hide_img.setImageResource(R.drawable.ic_labor)
+            hide_tv.setText(resources.getString(R.string.labor_details_not_found))
         }
         else
         {
-            //labor_list.setVisibility(View.VISIBLE)
+            hide_layout.setVisibility(View.GONE)
+
             labor_list_rl.layoutManager = LinearLayoutManager(MyApplication.context, LinearLayout.VERTICAL, false)
             val adapter = LaborAdapter(LABOR_INFO);
             labor_list_rl.adapter = adapter

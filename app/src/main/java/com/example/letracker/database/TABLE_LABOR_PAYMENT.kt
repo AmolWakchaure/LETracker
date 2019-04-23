@@ -2,6 +2,7 @@ package com.example.letracker.database
 
 import android.content.ContentValues
 import android.database.Cursor
+import com.example.letracker.other.Constants
 import com.example.letracker.other.M
 import com.example.letracker.other.MyApplication
 import com.example.letracker.user.pojo.LaborInfo
@@ -50,12 +51,13 @@ class TABLE_LABOR_PAYMENT {
         fun getPayments(paymentType : String,labor_id: String): ArrayList<PaymentInfo> {
 
             var paymentInfo = ArrayList<PaymentInfo>()
+
             try
             {
                 val db = MyApplication.db!!.getReadableDatabase()
-                val uQuery = "SELECT * FROM $TABLE_NAME WHERE $PAYMENT_TYPE = '"+paymentType+"' AND $LABOR_ID = '"+labor_id+"'"
-                var cursor = db.rawQuery(uQuery, null)
+                var uQuery = "SELECT * FROM $TABLE_NAME WHERE $PAYMENT_TYPE = '"+paymentType+"' AND $LABOR_ID = '"+labor_id+"' ORDER BY $ID DESC"
 
+                var cursor = db.rawQuery(uQuery, null)
                 if (cursor.count > 0)
                 {
                     while (cursor!!.moveToNext())

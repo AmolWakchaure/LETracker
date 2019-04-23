@@ -10,6 +10,8 @@ interface Constants {
         var ATTENDANCE_STRING = "att_string"
         var PAYMENT_ADVANCE = "advance"
         var PAYMENT_PAYMENT = "payment"
+        var PAYMENT_ALL = "All"
+        var RETURN_ADVANCE = "return_advance"
 
 
         //shared preferences parameter

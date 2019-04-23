@@ -14,6 +14,7 @@ import com.example.letracker.other.Constants
 import com.example.letracker.other.M
 import com.example.letracker.other.MyApplication
 import com.example.letracker.user.activity.HomeActivity
+import com.example.letracker.user.activity.LaborListActivity
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.Task
@@ -196,7 +197,7 @@ class LoginActivity : AppCompatActivity() {
                             MyApplication.editor.putString(Constants.USER_NAME,username).commit()
                             MyApplication.editor.putString(Constants.PASSWORD,password).commit()
                             //follow user login
-                            startActivity(Intent(this,HomeActivity::class.java))
+                            startActivity(Intent(this,LaborListActivity::class.java))
                             finish()
                             M.t("Successfully login")
                             break

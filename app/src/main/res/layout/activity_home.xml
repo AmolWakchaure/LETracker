@@ -37,12 +37,13 @@
                 android:orientation="horizontal"
                 android:layout_weight="1">
 
-            <android.support.v7.widget.CardView
+            <!--<android.support.v7.widget.CardView
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_margin="10dp"
                     app:cardCornerRadius="10dp"
                     android:layout_weight="1"
+                    android:visibility="gone"
                     card_view:cardElevation="5dp">
                 <LinearLayout
                         android:id="@+id/create_labor_li"
@@ -64,7 +65,7 @@
                             android:text="Create Labor"/>
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView>-->
 
 
             <android.support.v7.widget.CardView
@@ -106,6 +107,33 @@
 
                 </LinearLayout>
             </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    app:cardCornerRadius="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    card_view:cardElevation="5dp">
+                <LinearLayout
+                        android:id="@+id/make_payment_li"
+                        android:clickable="true"
+                        android:background="@drawable/ripple_effect"
+                        android:layout_width="fill_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_height="fill_parent">
+                    <ImageView
+                            android:layout_width="35pt"
+                            android:layout_height="35pt"
+                            android:src="@drawable/ic_payment_history"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2pt"
+                            android:fontFamily="@font/samsungsansregular"
+                            android:text="Make Payment"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
 
 
         </LinearLayout>
@@ -114,6 +142,33 @@
                 android:layout_height="fill_parent"
                 android:orientation="horizontal"
                 android:layout_weight="1">
+            <android.support.v7.widget.CardView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    app:cardCornerRadius="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    card_view:cardElevation="5dp">
+                <LinearLayout
+                        android:id="@+id/payment_history_li"
+                        android:clickable="true"
+                        android:background="@drawable/ripple_effect"
+                        android:layout_width="fill_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_height="fill_parent">
+                    <ImageView
+                            android:layout_width="35pt"
+                            android:layout_height="35pt"
+                            android:src="@drawable/ic_payment_history"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2pt"
+                            android:fontFamily="@font/samsungsansregular"
+                            android:text="Payment History"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
                     android:layout_width="fill_parent"
@@ -145,33 +200,7 @@
             </android.support.v7.widget.CardView>
 
 
-            <android.support.v7.widget.CardView
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    app:cardCornerRadius="10dp"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    card_view:cardElevation="5dp">
-                <LinearLayout
-                        android:id="@+id/payment_history_li"
-                        android:clickable="true"
-                        android:background="@drawable/ripple_effect"
-                        android:layout_width="fill_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:layout_height="fill_parent">
-                    <ImageView
-                            android:layout_width="35pt"
-                            android:layout_height="35pt"
-                            android:src="@drawable/ic_payment_history"/>
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2pt"
-                            android:fontFamily="@font/samsungsansregular"
-                            android:text="Payment History"/>
-                </LinearLayout>
-            </android.support.v7.widget.CardView>
+
 
         </LinearLayout>
         <LinearLayout

@@ -19,9 +19,7 @@ class AddNewLaborActivity : AppCompatActivity() {
         setContentView(R.layout.activity_add_new_labor)
 
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
-
         getIntentDetails()
-
         setClickListner();
     }
 
@@ -33,6 +31,7 @@ class AddNewLaborActivity : AppCompatActivity() {
 
         if(flag.equals(Constants.FLAG_UPDATE))
         {
+            title_tv.setText("Update Labor details")
             submit_btn.setText("Update")
             ID = bundle.getString(TABLE_LABOR.ID)
             var NAME = bundle.getString(TABLE_LABOR.NAME)

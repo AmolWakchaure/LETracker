@@ -7,6 +7,7 @@ import com.example.letracker.R
 import com.example.letracker.admin.activity.UserListActivity
 import com.example.letracker.authentication.LoginActivity
 import com.example.letracker.user.activity.HomeActivity
+import com.example.letracker.user.activity.LaborListActivity
 
 class SplashActivity : AppCompatActivity() {
 
@@ -33,7 +34,7 @@ class SplashActivity : AppCompatActivity() {
             }
             else
             {
-                startActivity(Intent(this, HomeActivity::class.java))
+                startActivity(Intent(this, LaborListActivity::class.java))
                 finish()
             }
         }

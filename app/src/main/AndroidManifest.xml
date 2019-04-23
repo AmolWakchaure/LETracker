@@ -13,7 +13,9 @@
             android:roundIcon="@drawable/ic_user_profile"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".user.activity.AdavancePaymentActivity">
+        <activity android:name=".payment_history.PaymentHistoryActivity">
+        </activity>
+        <activity android:name=".user.activity.MakePaymentActivity">
         </activity>
         <activity android:name=".user.activity.AttendanceActivity">
         </activity>

@@ -32,7 +32,8 @@
                   android:textColor="@color/colorWhite"
                   android:fontFamily="@font/samsungsansregular"
                   android:layout_weight="1"
-                  android:layout_height="fill_parent"/>
+                  android:layout_height="fill_parent"
+        android:id="@+id/title_tv"/>
 
     </LinearLayout>
 

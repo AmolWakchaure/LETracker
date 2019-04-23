@@ -5,10 +5,9 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.example.letracker.R
 import com.example.letracker.database.TABLE_LABOR
-import com.example.letracker.other.Constants
 import com.example.letracker.other.M
+import com.example.letracker.payment_history.PaymentHistoryActivity
 import kotlinx.android.synthetic.main.activity_home.*
-import java.util.jar.Manifest
 
 class HomeActivity : AppCompatActivity() {
 
@@ -44,13 +43,8 @@ class HomeActivity : AppCompatActivity() {
 
     private fun setClickListner() {
 
-        create_labor_li.setOnClickListener {
 
-            var i = Intent(this,AddNewLaborActivity::class.java)
-            i.putExtra(Constants.FLAG, Constants.FLAG_ADD)
-            startActivity(i)
 
-        }
         all_labor_li.setOnClickListener {
 
             var LABOR_INFO = TABLE_LABOR.getLabor()
@@ -64,11 +58,13 @@ class HomeActivity : AppCompatActivity() {
             }
 
         }
-        work_history_li.setOnClickListener {
+        make_payment_li.setOnClickListener {
 
+            startActivity(Intent(this,MakePaymentActivity::class.java))
         }
         payment_history_li.setOnClickListener {
 
+            startActivity(Intent(this,PaymentHistoryActivity::class.java))
         }
         site_details_li.setOnClickListener {
 

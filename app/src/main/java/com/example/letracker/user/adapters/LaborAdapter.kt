@@ -8,13 +8,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.PopupMenu
 import android.widget.TextView
 import com.example.letracker.R
 import com.example.letracker.database.TABLE_ATTENDANCE
 import com.example.letracker.database.TABLE_LABOR
 import com.example.letracker.other.Constants
 import com.example.letracker.other.M
-import com.example.letracker.user.activity.AdavancePaymentActivity
+import com.example.letracker.payment_history.PaymentHistoryActivity
+import com.example.letracker.user.activity.MakePaymentActivity
 import com.example.letracker.user.activity.AddNewLaborActivity
 import com.example.letracker.user.activity.AttendanceActivity
 import com.example.letracker.user.pojo.LaborInfo
@@ -57,15 +59,63 @@ class LaborAdapter (val userList: ArrayList<LaborInfo>) : RecyclerView.Adapter<L
             val avance_btn = itemView.findViewById(R.id.avance_btn) as Button
             val payment_btn = itemView.findViewById(R.id.payment_btn) as Button
 
+
             name_tv.setText(user.name)
             mobile_tv.setText(Html.fromHtml("<b>Mobile : </b>"+user.mobile))
             address_tv.setText(Html.fromHtml("<b>Address : </b>"+user.address))
             charges_tv.setText(Html.fromHtml("<b>Charges (per Day in \u20B9) : </b>"+user.charges))
 
+
+
+            itemView.setOnClickListener {
+
+                //creating a popup menu
+                var popup = PopupMenu(itemView.context,itemView)
+                //inflating menu from xml resource
+                popup.inflate(R.menu.labor_option_menu)
+                //adding click listener
+                popup.setOnMenuItemClickListener {
+
+                    when(it.itemId)
+                    {
+                        R.id.edt_lbr_menu ->
+                        {
+                            //edite labor details
+                            var i = Intent(itemView.context,AddNewLaborActivity::class.java)
+
+                            i.putExtra(Constants.FLAG, Constants.FLAG_UPDATE)
+                            i.putExtra(TABLE_LABOR.ID, user.id)
+                            i.putExtra(TABLE_LABOR.NAME, user.name)
+                            i.putExtra(TABLE_LABOR.MOBILE_NUMBER, user.mobile)
+                            i.putExtra(TABLE_LABOR.ADDRESS, user.address)
+                            i.putExtra(TABLE_LABOR.CHARGES, user.charges)
+
+                            itemView.context.startActivity(i)
+                        }
+                        R.id.make_pay_menu ->
+                        {
+                            //make labor payment
+                            var i = Intent(itemView.context,MakePaymentActivity::class.java)
+                            i.putExtra(TABLE_LABOR.ID, user.id)
+                            i.putExtra(TABLE_LABOR.NAME, user.name)
+                            itemView.context.startActivity(i)
+                        }
+                        R.id.pay_details_menu ->
+                        {
+                            //view labor payment history
+                            var i = Intent(itemView.context,PaymentHistoryActivity::class.java)
+                            i.putExtra(TABLE_LABOR.ID, user.id)
+                            itemView.context.startActivity(i)
+                        }
+                    }
+                    true
+                }
+                popup.show()
+            }
             avance_btn.setOnClickListener {
 
 
-                var i = Intent(itemView.context,AdavancePaymentActivity::class.java)
+                var i = Intent(itemView.context,MakePaymentActivity::class.java)
 
                 i.putExtra(Constants.FLAG,Constants.PAYMENT_ADVANCE)
                 i.putExtra(TABLE_LABOR.ID,user.id)
@@ -76,7 +126,7 @@ class LaborAdapter (val userList: ArrayList<LaborInfo>) : RecyclerView.Adapter<L
 
             payment_btn.setOnClickListener {
 
-                var i = Intent(itemView.context,AdavancePaymentActivity::class.java)
+                var i = Intent(itemView.context,MakePaymentActivity::class.java)
 
                 i.putExtra(Constants.FLAG,Constants.PAYMENT_PAYMENT)
                 i.putExtra(TABLE_LABOR.ID,user.id)

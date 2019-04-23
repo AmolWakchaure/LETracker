@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="example.javatpoint.com.optionmenu.MainActivity">
+
+    <item  android:id="@+id/edt_lbr_menu"
+           android:title="Edit Labor"/>
+    <item  android:id="@+id/make_pay_menu"
+           android:title="Make Payment"/>
+    <item  android:id="@+id/pay_details_menu"
+           android:title="Payment Details"
+           app:showAsAction="withText"/>
+</menu>
